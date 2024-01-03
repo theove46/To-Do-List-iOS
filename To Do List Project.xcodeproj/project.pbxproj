@@ -13,6 +13,7 @@
 		F91ADE342B45399800154545 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91ADE322B45399800154545 /* Main.storyboard */; };
 		F91ADE362B45399A00154545 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91ADE352B45399A00154545 /* Assets.xcassets */; };
 		F91ADE392B45399A00154545 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91ADE372B45399A00154545 /* LaunchScreen.storyboard */; };
+		F91ADE422B453BD400154545 /* taskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ADE412B453BD400154545 /* taskModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F91ADE352B45399A00154545 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F91ADE382B45399A00154545 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F91ADE3A2B45399A00154545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F91ADE412B453BD400154545 /* taskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,32 @@
 		F91ADE2B2B45399800154545 /* To Do List Project */ = {
 			isa = PBXGroup;
 			children = (
+				F91ADE432B453CCB00154545 /* ViewControllers */,
+				F91ADE402B453B7000154545 /* Models */,
 				F91ADE2C2B45399800154545 /* AppDelegate.swift */,
 				F91ADE2E2B45399800154545 /* SceneDelegate.swift */,
-				F91ADE302B45399800154545 /* ViewController.swift */,
 				F91ADE322B45399800154545 /* Main.storyboard */,
 				F91ADE352B45399A00154545 /* Assets.xcassets */,
 				F91ADE372B45399A00154545 /* LaunchScreen.storyboard */,
 				F91ADE3A2B45399A00154545 /* Info.plist */,
 			);
 			path = "To Do List Project";
+			sourceTree = "<group>";
+		};
+		F91ADE402B453B7000154545 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F91ADE412B453BD400154545 /* taskModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F91ADE432B453CCB00154545 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F91ADE302B45399800154545 /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +159,7 @@
 			files = (
 				F91ADE312B45399800154545 /* ViewController.swift in Sources */,
 				F91ADE2D2B45399800154545 /* AppDelegate.swift in Sources */,
+				F91ADE422B453BD400154545 /* taskModel.swift in Sources */,
 				F91ADE2F2B45399800154545 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
