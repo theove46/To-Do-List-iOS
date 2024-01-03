@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F91ADE2D2B45399800154545 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ADE2C2B45399800154545 /* AppDelegate.swift */; };
 		F91ADE2F2B45399800154545 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ADE2E2B45399800154545 /* SceneDelegate.swift */; };
-		F91ADE312B45399800154545 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ADE302B45399800154545 /* ViewController.swift */; };
+		F91ADE312B45399800154545 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ADE302B45399800154545 /* ProfileViewController.swift */; };
 		F91ADE342B45399800154545 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91ADE322B45399800154545 /* Main.storyboard */; };
 		F91ADE362B45399A00154545 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91ADE352B45399A00154545 /* Assets.xcassets */; };
 		F91ADE392B45399A00154545 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91ADE372B45399A00154545 /* LaunchScreen.storyboard */; };
@@ -20,7 +20,7 @@
 		F91ADE292B45399800154545 /* To Do List Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To Do List Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91ADE2C2B45399800154545 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F91ADE2E2B45399800154545 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F91ADE302B45399800154545 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F91ADE302B45399800154545 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F91ADE332B45399800154545 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F91ADE352B45399A00154545 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F91ADE382B45399A00154545 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,12 +60,9 @@
 			children = (
 				F91ADE432B453CCB00154545 /* ViewControllers */,
 				F91ADE402B453B7000154545 /* Models */,
-				F91ADE2C2B45399800154545 /* AppDelegate.swift */,
-				F91ADE2E2B45399800154545 /* SceneDelegate.swift */,
-				F91ADE322B45399800154545 /* Main.storyboard */,
-				F91ADE352B45399A00154545 /* Assets.xcassets */,
-				F91ADE372B45399A00154545 /* LaunchScreen.storyboard */,
+				F91ADE462B45575000154545 /* Supporting */,
 				F91ADE3A2B45399A00154545 /* Info.plist */,
+				F91ADE322B45399800154545 /* Main.storyboard */,
 			);
 			path = "To Do List Project";
 			sourceTree = "<group>";
@@ -81,9 +78,20 @@
 		F91ADE432B453CCB00154545 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F91ADE302B45399800154545 /* ViewController.swift */,
+				F91ADE302B45399800154545 /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F91ADE462B45575000154545 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				F91ADE352B45399A00154545 /* Assets.xcassets */,
+				F91ADE372B45399A00154545 /* LaunchScreen.storyboard */,
+				F91ADE2E2B45399800154545 /* SceneDelegate.swift */,
+				F91ADE2C2B45399800154545 /* AppDelegate.swift */,
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,7 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F91ADE312B45399800154545 /* ViewController.swift in Sources */,
+				F91ADE312B45399800154545 /* ProfileViewController.swift in Sources */,
 				F91ADE2D2B45399800154545 /* AppDelegate.swift in Sources */,
 				F91ADE422B453BD400154545 /* taskModel.swift in Sources */,
 				F91ADE2F2B45399800154545 /* SceneDelegate.swift in Sources */,
