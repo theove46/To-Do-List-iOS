@@ -7,11 +7,13 @@
 
 import Foundation
 
-struct Task: Codable {
+struct TaskModel: Codable {
+    let id: Int
     let title: String
     let descriotion: String?
     let priority: Int
     let due_date: Date
+    let alloc_time: Double
     let isCompleted: Bool
     let isArchived: Bool
 }
