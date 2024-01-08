@@ -11,7 +11,9 @@ class HomeViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    var tasks = tasksArray
+    var tasks: [TaskModel] {
+        return TaskManager.shared.tasks
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,44 +28,14 @@ class HomeViewController: UIViewController {
         }
         
         // Get all current saved tasks
-        updateTask()
+        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateTask()
-    }
-    
-    
-    func updateTask() {
-        //tasks.removeAll()
-        
-        guard let count = UserDefaults().value(forKey: "count") as? Int else {
-            return
-        }
-        
-        for x in 0..<count {
-            
-            if let task = UserDefaults().value(forKey: "task \(x+1)") as? String {
-                tasks.append(
-                    TaskModel(
-                        id: 0,
-                        title: task,
-                        descriotion: nil,
-                        priority: 0,
-                        due_date: Date(),
-                        alloc_time: 0.0, 
-                        isCompleted: false,
-                        isArchived: false
-                    )
-                )
-            }
-        }
         
         tableView.reloadData()
     }
-    
-    
     
 }
 
@@ -76,18 +48,12 @@ extension HomeViewController: UITableViewDelegate {
         
         vc.title = tasks[indexPath.row].title
         vc.task = tasks[indexPath.row]
-        vc.delegate = self
-        vc.tableView = self.tableView 
-        
-        vc.update = {
-            DispatchQueue.main.async {
-                self.updateTask()
-            }
-        }
+        //vc.delegate = self
+        vc.tableView = self.tableView
         
         navigationController?.pushViewController(vc, animated: true)
         
-        updateTask()
+        tableView.reloadData()
     }
 }
 
@@ -106,8 +72,10 @@ extension HomeViewController: UITableViewDataSource {
     }
 }
 
-extension HomeViewController: TaskViewControllerDelegate, EntryViewControllerDelegate {
-    func updateTasks() {
-        self.updateTask()
-    }
-}
+
+//extension HomeViewController: TaskViewControllerDelegate, EditViewControllerDelegate {
+//    func updateTasks(with taskModel: TaskModel?) {
+//        self.updateTask(newTaskModel: taskModel)
+//    }
+//}
+

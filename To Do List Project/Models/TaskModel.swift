@@ -8,12 +8,12 @@
 import Foundation
 
 struct TaskModel: Codable {
-    let id: Int
-    let title: String
-    let descriotion: String?
-    let priority: Int
-    let due_date: Date
-    let alloc_time: Double
-    let isCompleted: Bool
-    let isArchived: Bool
+    var id: Int
+    var title: String
+    var description: String?
+    var priority: Int
+    var due_date: Date
+    var alloc_time: Double
+    var isCompleted: Bool
+    var isArchived: Bool
 }

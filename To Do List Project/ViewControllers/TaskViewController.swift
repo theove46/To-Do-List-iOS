@@ -5,47 +5,56 @@
 //  Created by BS1098 on 3/1/24.
 //
 
+//protocol TaskViewControllerDelegate: AnyObject {
+//    func updateTasks(with taskModel: TaskModel?)
+//    func deleteTask(at index: Int)
+//}
+//
+//extension TaskViewControllerDelegate {
+//
+//    func deleteTask(at index: Int) {
+//        self.deleteTask(at: index)
+//    }
+//}
+
+
 import UIKit
 
-protocol TaskViewControllerDelegate: AnyObject {
-    func updateTasks()
-    func deleteTask()
-}
-
-extension TaskViewControllerDelegate {
-    func deleteTask() {
-        //
-    }
-}
-
 class TaskViewController: UIViewController {
-
-    @IBOutlet var label: UILabel!
+    
+    @IBOutlet var taskTitle: UILabel!
+    @IBOutlet var taskDescription: UILabel!
+    @IBOutlet var taskPriority: UILabel!
+    @IBOutlet var taskDueDate: UILabel!
+    @IBOutlet var taskAllocTime: UILabel!
     
     var task: TaskModel?
     var tableView: UITableView?
-    weak var delegate: TaskViewControllerDelegate?
+    //weak var delegate: TaskViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        label.text = task?.title
+        taskTitle.text = task?.title
+        taskDescription.text = task?.description
+        taskPriority.text = "\(task?.priority ?? 1)"
+        taskAllocTime.text = "\(task?.alloc_time ?? 0.0)"
+        if let dueDate = task?.due_date {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yy"
+            taskDueDate.text = dateFormatter.string(from: dueDate)
+        } else {
+            taskDueDate.text = ""
+        }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(deleteTask))
     }
     
-    @objc func deleteTask(){
-        
-        guard let tableView = tableView else {
-            return
-        }
-        
-        if let count = UserDefaults().value(forKey: "count") as? Int {
-            
-            tableView.reloadData()
-            delegate?.updateTasks()
+    @objc func deleteTask() {
+        if let taskId = task?.id {
+            TaskManager.shared.deleteTask(at: taskId - 1)
             navigationController?.popViewController(animated: true)
+            tableView?.reloadData()
         }
     }
-
 }

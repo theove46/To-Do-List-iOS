@@ -15,9 +15,10 @@
 		F91ADE392B45399A00154545 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91ADE372B45399A00154545 /* LaunchScreen.storyboard */; };
 		F91ADE422B453BD400154545 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ADE412B453BD400154545 /* TaskModel.swift */; };
 		F91ADE4C2B4588E800154545 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ADE4B2B4588E800154545 /* HomeViewController.swift */; };
-		F91ADE4E2B4588F900154545 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ADE4D2B4588F900154545 /* EntryViewController.swift */; };
+		F91ADE4E2B4588F900154545 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ADE4D2B4588F900154545 /* EditViewController.swift */; };
 		F91ADE502B458A9500154545 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ADE4F2B458A9500154545 /* TaskViewController.swift */; };
 		F91ADE522B458CAE00154545 /* DummyTasksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ADE512B458CAE00154545 /* DummyTasksList.swift */; };
+		F91ADEB72B4C02D300154545 /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91ADEB62B4C02D300154545 /* TaskManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +32,10 @@
 		F91ADE3A2B45399A00154545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F91ADE412B453BD400154545 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		F91ADE4B2B4588E800154545 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		F91ADE4D2B4588F900154545 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		F91ADE4D2B4588F900154545 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		F91ADE4F2B458A9500154545 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		F91ADE512B458CAE00154545 /* DummyTasksList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyTasksList.swift; sourceTree = "<group>"; };
+		F91ADEB62B4C02D300154545 /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		F91ADE2B2B45399800154545 /* To Do List Project */ = {
 			isa = PBXGroup;
 			children = (
+				F91ADEB52B4C028B00154545 /* Singletone */,
 				F91ADE432B453CCB00154545 /* ViewControllers */,
 				F91ADE402B453B7000154545 /* Models */,
 				F91ADE462B45575000154545 /* Supporting */,
@@ -89,7 +92,7 @@
 			children = (
 				F91ADE302B45399800154545 /* ProfileViewController.swift */,
 				F91ADE4B2B4588E800154545 /* HomeViewController.swift */,
-				F91ADE4D2B4588F900154545 /* EntryViewController.swift */,
+				F91ADE4D2B4588F900154545 /* EditViewController.swift */,
 				F91ADE4F2B458A9500154545 /* TaskViewController.swift */,
 			);
 			path = ViewControllers;
@@ -104,6 +107,14 @@
 				F91ADE2C2B45399800154545 /* AppDelegate.swift */,
 			);
 			path = Supporting;
+			sourceTree = "<group>";
+		};
+		F91ADEB52B4C028B00154545 /* Singletone */ = {
+			isa = PBXGroup;
+			children = (
+				F91ADEB62B4C02D300154545 /* TaskManager.swift */,
+			);
+			path = Singletone;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F91ADEB72B4C02D300154545 /* TaskManager.swift in Sources */,
 				F91ADE4C2B4588E800154545 /* HomeViewController.swift in Sources */,
 				F91ADE522B458CAE00154545 /* DummyTasksList.swift in Sources */,
 				F91ADE502B458A9500154545 /* TaskViewController.swift in Sources */,
@@ -184,7 +196,7 @@
 				F91ADE2D2B45399800154545 /* AppDelegate.swift in Sources */,
 				F91ADE422B453BD400154545 /* TaskModel.swift in Sources */,
 				F91ADE2F2B45399800154545 /* SceneDelegate.swift in Sources */,
-				F91ADE4E2B4588F900154545 /* EntryViewController.swift in Sources */,
+				F91ADE4E2B4588F900154545 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
