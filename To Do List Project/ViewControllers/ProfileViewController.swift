@@ -24,6 +24,7 @@ class ProfileViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
 }
 

@@ -21,6 +21,9 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        // Enable multiple selection during editing
+        tableView.allowsMultipleSelectionDuringEditing = true
+        
         // Setup
         if !UserDefaults().bool(forKey: "setup") {
             UserDefaults().set(true, forKey: "setup")
@@ -63,12 +66,34 @@ extension HomeViewController: UITableViewDataSource {
         return tasks.count
     }
     
+    // Enable swipe-to-delete
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the task from TaskManager
+            TaskManager.shared.deleteTask(at: tasks[indexPath.row].id - 1)
+            
+            // Delete the row from the table view
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "home_cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "home_cell", for: indexPath) as! CustomCellViewController
         
-        cell.textLabel?.text = tasks[indexPath.row].title
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm - dd/MM/yy"
+        
+        cell.taskTitle?.text = tasks[indexPath.row].title
+        cell.taskDescription?.text = tasks[indexPath.row].description
+        cell.taskPriority?.text = "\(tasks[indexPath.row].priority)"
+        cell.taskDueDate?.text = dateFormatter.string(from: tasks[indexPath.row].due_date)
+        cell.taskAllocTime?.text = "\(tasks[indexPath.row].alloc_time)"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
     }
 }
 

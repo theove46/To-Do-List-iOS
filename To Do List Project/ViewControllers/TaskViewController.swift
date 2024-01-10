@@ -36,12 +36,12 @@ class TaskViewController: UIViewController {
         super.viewDidLoad()
         
         taskTitle.text = task?.title
-        taskDescription.text = task?.description
+        taskDescription.text = task?.description ?? ""
         taskPriority.text = "\(task?.priority ?? 1)"
         taskAllocTime.text = "\(task?.alloc_time ?? 0.0)"
         if let dueDate = task?.due_date {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/yy"
+            dateFormatter.dateFormat = "HH:mm - dd/MM/yy"
             taskDueDate.text = dateFormatter.string(from: dueDate)
         } else {
             taskDueDate.text = ""

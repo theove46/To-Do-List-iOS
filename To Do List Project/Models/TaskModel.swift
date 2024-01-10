@@ -10,7 +10,7 @@ import Foundation
 struct TaskModel: Codable {
     var id: Int
     var title: String
-    var description: String?
+    var description: String
     var priority: Int
     var due_date: Date
     var alloc_time: Double
