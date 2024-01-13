@@ -118,22 +118,20 @@ extension EditViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? PriorityCellViewController {
-            cell.contentView.backgroundColor = .clear
+            cell.setBackgroundColor()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? PriorityCellViewController {
-            cell.contentView.backgroundColor = .clear
+            cell.setBackgroundColor()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? PriorityCellViewController {
             
-            cell.showIcon()
-            cell.setBackgroundColor(selected: true)
-            
+            cell.setBackgroundColor()            
             
             if let selectedPriority = cell.priorityLevel.currentTitle,
                let priorityInt = Int(selectedPriority) {
@@ -147,8 +145,7 @@ extension EditViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         if let cell = collectionView.cellForItem(at: indexPath) as? PriorityCellViewController {
             
-            cell.hideIcon()
-            cell.setBackgroundColor(selected: false)
+            cell.setBackgroundColor()
         }
     }
     

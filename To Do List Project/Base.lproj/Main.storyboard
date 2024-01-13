@@ -355,6 +355,9 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="128"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" title="Priority" buttonSize="small"/>
+                                                                    <connections>
+                                                                        <action selector="didTap:" destination="wba-8A-jdH" eventType="touchUpInside" id="9dx-YC-xDj"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>

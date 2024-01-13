@@ -11,23 +11,31 @@ class PriorityCellViewController: UICollectionViewCell {
     
     @IBOutlet var priorityLevel: UIButton!
     
+    var state: Bool = false
+    
+    @IBAction func didTap(_ sender: UIButton) {
+        state.toggle()
+        setBackgroundColor()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setBackgroundColor(selected: false)
-        
-        priorityLevel.alpha = 0.0
+        setBackgroundColor()
     }
     
-    func setBackgroundColor(selected: Bool) {
-        if selected {
+    func setBackgroundColor() {
+        
+        if state {
             let whiteView = UIView(frame: bounds)
             whiteView.backgroundColor = .white
             self.backgroundView = whiteView
+            priorityLevel.setTitleColor(.gray, for: .normal)
         } else {
             let grayView = UIView(frame: bounds)
             grayView.backgroundColor = .gray
             self.backgroundView = grayView
+            priorityLevel.setTitleColor(.white, for: .normal)
         }
     }
     
@@ -38,4 +46,9 @@ class PriorityCellViewController: UICollectionViewCell {
     func hideIcon() {
         self.priorityLevel.alpha = 0.0
     }
+    
+    override func select(_ sender: Any?) {
+        setBackgroundColor()
+    }
+    
 }
