@@ -25,7 +25,7 @@ The Movies Database App leverages the following technologies:
   <img width="200" src="https://github.com/theove46/To-Do-List-iOS/assets/57717227/4c04e6e1-bdb0-43b2-8965-bf6195fe2f26">
   <img width="200" src="https://github.com/theove46/To-Do-List-iOS/assets/57717227/8f7ef9f7-1e50-4774-8a5d-4b2f20f0f3ce">
   <img width="200" src="https://github.com/theove46/To-Do-List-iOS/assets/57717227/29caf47f-7940-4ee2-a074-0277a348e044">
-  <img width="200" src="https://github.com/theove46/To-Do-List-iOS/assets/57717227/a0a93c79-f0f9-4112-99cb-c9f85a772b15">
+  <img width="200" src="https://github.com/theove46/To-Do-List-iOS/assets/57717227/2c2a46a4-e15b-4009-abb0-e79e00b5b536">
 </span>
 
 
